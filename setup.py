@@ -15,7 +15,7 @@ allium_hash_module = Extension('allium_hash',
                                include_dirs=['.', './sha3'])
 
 setup (name = 'allium_hash',
-       version = '1.0.2',
+       version = '1.0.3',
        author_email = 'ryan@rshaw.me',
        author = 'Ryan Shaw',
        url = 'https://github.com/ryan-shaw/allium-hash-python',
