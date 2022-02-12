@@ -40,7 +40,7 @@
 #include "sph_skein.h"
 #include "Lyra2.h"
 
-void allium_hash(const char* input, char* output)
+void _allium_hash(const char* input, char* output)
 {
 	int32_t hashA[8], hashB[8];
 

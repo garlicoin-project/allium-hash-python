@@ -17,9 +17,9 @@ static PyObject *lyra2re2_getpowhash(PyObject *self, PyObject *args)
     output = PyMem_Malloc(32);
 
 #if PY_MAJOR_VERSION >= 3
-    allium_hash((char *)PyBytes_AsString((PyObject*) input), output);
+    _allium_hash((char *)PyBytes_AsString((PyObject*) input), output);
 #else
-    allium_hash((char *)PyString_AsString((PyObject*) input), output);
+    _allium_hash((char *)PyString_AsString((PyObject*) input), output);
 #endif
     Py_DECREF(input);
 #if PY_MAJOR_VERSION >= 3
@@ -39,19 +39,19 @@ static PyMethodDef Lyra2RE2Methods[] = {
 #if PY_MAJOR_VERSION >= 3
 static struct PyModuleDef Lyra2RE2Module = {
     PyModuleDef_HEAD_INIT,
-    "allium_hash",
+    "_allium_hash",
     "...",
     -1,
     Lyra2RE2Methods
 };
 
-PyMODINIT_FUNC PyInit_allium_hash(void) {
+PyMODINIT_FUNC PyInit__allium_hash(void) {
     return PyModule_Create(&Lyra2RE2Module);
 }
 
 #else
 
-PyMODINIT_FUNC initallium_hash(void) {
-    (void) Py_InitModule("allium_hash", Lyra2RE2Methods);
+PyMODINIT_FUNC init_allium_hash(void) {
+    (void) Py_InitModule("_allium_hash", Lyra2RE2Methods);
 }
 #endif
