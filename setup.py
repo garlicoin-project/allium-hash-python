@@ -1,6 +1,6 @@
 from setuptools import setup, Extension
 
-allium_hash_module = Extension('allium_hash',
+allium_hash_module = Extension('_allium_hash',
                                sources = [
 										  'lyra2re2module.c',
                                           'Lyra2RE.c',
@@ -15,7 +15,7 @@ allium_hash_module = Extension('allium_hash',
                                include_dirs=['.', './sha3'])
 
 setup (name = 'allium_hash',
-       version = '1.0.4',
+       version = '1.0.5',
        author_email = 'ryan@rshaw.me',
        author = 'Ryan Shaw',
        url = 'https://github.com/ryan-shaw/allium-hash-python',
